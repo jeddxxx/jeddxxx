@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="100%" height="100%">
+  <defs>
+    <!-- Filtros de Iluminación y Glow Estilo Vercel/Linear -->
+    <filter id="glow-neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-suave" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="bokeh" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+
+    <!-- Gradientes Dinámicos y de Acentuación -->
+    <linearGradient id="grad-ascii" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="50%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#10B981" />
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite" />
+    </linearGradient>
+    
+    <linearGradient id="grad-borde" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.6" />
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.4" />
+      <animateTransform attributeName="gradientTransform" type="rotate" from="360 50 50" to="0 50 50" dur="8s" repeatCount="indefinite" />
+    </linearGradient>
+
+    <!-- Máscaras Secuenciales para Efecto de Escritura y Revelado Terminals -->
+    <mask id="mask-linea1">
+      <rect x="0" y="0" width="0" height="610" fill="#ffffff">
+        <animate attributeName="width" from="0" to="1180" begin="0.5s" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      </rect>
+    </mask>
+    <mask id="mask-linea2">
+      <rect x="0" y="0" width="0" height="610" fill="#ffffff">
+        <animate attributeName="width" from="0" to="1180" begin="1.8s" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      </rect>
+    </mask>
+    <mask id="mask-info">
+      <rect x="0" y="0" width="1180" height="0" fill="#ffffff">
+        <animate attributeName="height" from="0" to="610" begin="3.2s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      </rect>
+    </mask>
+
+    <!-- Patrón de Ruido Estilo Cristal Esmerilado -->
+    <pattern id="ruido" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#0F172A" />
+      <circle cx="1" cy="1" r="0.5" fill="#ffffff" opacity="0.04" />
+      <circle cx="3" cy="3" r="0.4" fill="#ffffff" opacity="0.02" />
+    </pattern>
+  </defs>
+
+  <!-- ================= BACKGROUND LAYER ================= -->
+  <rect width="100%" height="100%" fill="#030712" rx="16" />
+
+  <!-- Luces Ambientales de Fondo (Glow Flotante) -->
+  <g filter="url(#bokeh)" opacity="0.25">
+    <circle cx="150" cy="150" r="140" fill="#7C3AED">
+      <animate attributeName="cx" values="150;200;150" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="150;100;150" dur="12s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="450" r="180" fill="#22D3EE">
+      <animate attributeName="cx" values="900;850;900" dur="16s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="450;500;450" dur="16s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Partículas de Fondo Dinámicas -->
+  <g fill="#ffffff" opacity="0.15">
+    <circle cx="100" cy="500" r="1.5"><animate attributeName="cy" values="500;480;500" dur="4s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite" /></circle>
+    <circle cx="450" cy="80" r="1"><animate attributeName="cy" values="80;60;80" dur="6s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite" /></circle>
+    <circle cx="1100" cy="250" r="2"><animate attributeName="cy" values="250;235;250" dur="5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.05;0.3;0.05" dur="5s" repeatCount="indefinite" /></circle>
+  </g>
+
+  <!-- ================= BORDER SHIMMER ================= -->
+  <rect x="1" y="1" width="1178" height="608" rx="15" fill="none" stroke="url(#grad-borde)" stroke-width="1.5" />
+
+  <!-- ================= LEFT SIDE: FLOATING ASCII ART ================= -->
+  <g transform="translate(0,0)">
+    <!-- Animación sutil de levitación -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.445 0.05 0.55 0.95; 0.445 0.05 0.55 0.95" />
+    
+    <!-- Renderizado seguro de Capa ASCII mediante foreignObject encapsulado -->
+    <foreignObject x="35" y="45" width="420" height="520">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+        <pre style="font-family:'Courier New', monospace; font-size:6.5px; line-height:1.05; font-weight:900; background:url(#grad-ascii); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin:0; padding:0; white-space:pre; filter:drop-shadow(0 0 4px rgba(34,211,238,0.15));"><![CDATA[
+&&&&&&&&ooo<o<oooo<ooo<o<o<#@@@@@@@@#@@@@####@@@@@#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&ooooooooooooooo&@@@@@@@@@@@@@@###@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&oo&&&&&&oooooo8@@@@@@@@@@@@@@###@@@@@@@8&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&oooo&o8@@@@@@@@@#########@@@@@@#o&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&ooooo8@##@@@@@@#8###8#####@@@@#ooooooo&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&ooooooooo&&&&#@#@@@@@@@@##@@#@@@@@@@@@@@###88&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&8888####@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@###888&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&888########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##8&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&#@@@@@@@@@@#@@@@@@@@@@@@@@###888888&&&&&&&&&&&&&&&&&&&&8&
+&&&&&&&&&&&&&&&&&&&&&&&8@@@@#@@@##@@####@@@@###@@8ooooo&&&&&&&&&&&&&&&&&&&&&&88&
+&&&&&&&&&&&&&&&&&&&&&&&&8@@##########88#####88#@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&88&
+&&&&&&&&&&&&&&&&&&&&&&&&&8@###8888###888888888#@@8&&&&&&&&&&&&&&&&&&&&&&&&&8888&
+&&&&&&&&&&&&&&&&&&&&&&&&&o#@##8888##888888888##8@@&&&&&&&&&&&&&&&&&&&&&&&&&8888&
+&&&&&&&&&&&&&&&&&&&&&&&&&8#@###888##888888888#88#@&&&&&&&&&&&&&&&&&&&&&&&&&888&&
+&&&&&&&&&&&&&&&&&&&&&&&&8@@@############88888#8888&&&&&&&&&&&&&&&&&&&&&&&&8888&o
+&&&&&&&&&&&&&&&&&&&&&&8#@@@@@@#########8ooooooooo&o&&&&&&&&&&&&&&&&&&&&&88888&o
+&&&&&&&&&&&8888888#8#@@@@@@#@@@@#######&ooooo::oo88o&&&&&&&&&&&&&&&&&&&&888888&o
+&&&&&&&&&&###88#######@@@@@@@#@@@######8:oooooo:o#8o&&&&&&&&&&&&&&&&&&&8888888&o
+&&&&&&&8##@@@####8#####@@@@@@@##@@@@@@@8:oooooooo#8o&&8&&&&&&&&&&&&&&&88888888&o
+&&&&&&#@@@@@@@@#888#####@@@@@@@@#######8:ooooooooooo8&###888&&&&&&&&&&88888888&o
+&&&&&#@@@@@@@@@@##8888###@@@@@@@@@#####8oooooooooo:o8&#@@@@@##88&&&8&888888888&o
+&&&&8@@@@@@@@@@@@@#####8###@@@@@@@@@@##8ooooooooooo&&&&@@@@@@@@#8&88&88888888&&o
+&&&&#@@@@@@@@@@@@@@@#####8##@@@@@@@@##@8&&888&oooo:&&&&#@@@@@@@@#8&8888888888&&o
+&&&8@@@@@@@@@@@@@@@@@@###888#@@@@@@#@@@8o&&888&&&&o&&&&8@@@@@@@@@@8888888888&&o
+&&&#@@@@@@@@@@@@@@@@@@@#######@@@@@@@##8oooo&&888&&&ooo&##@@@@@@@@@8888888888&&o
+&&8@@@@@@@@@@@@@@@@@@@@@######8#@@@@@#88&&&&&&&88888&&o&8##@@@@@@@@#888888888&&o
+&&#@@@@@@@@@@@@@@@@@@@@@@######8##@@@@@#888888&&o&&&&&&&8@##@@@@@@@@#88888888&&o
+&8@@@@@@@@@@@@@@@@@@##@@@@#########@@@@#&&88###8&&&&o&&&8@@@@@@@@@@@#88888888&&o
+&#@@@@@@@@@@@@@@@@@###@@@@@##########@@@##88#88#88&&&&&&&#@@@@@@@@@@@#8888888&&o
+8@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@####888&&&&&&&8@@@@@@@@@@@@8888888&&o
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@@@@@#888&&&&&8#@@@@@@@@@@@#888888&&o
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@#88&&&&&8#@@@@@@@@@@@#88888&&&o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@##88&&&8@@@@@@@#@@@@@888888&&o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8########@@@@@@@@@@@@@####@@@@@@@@@@@@@#8888&&oo
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#########@@@@@@@#@@@@@@@@@@@@@@@@@@@@@@88888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@88888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8############@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88########8###@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888########88##@@@@@@@@@@@@@@@@@@@@@@@@@@@8888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@8888888#######88#@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#888######@#88#@@@@@@@@@@@@@@@@@@@@@@@@#88888&o:
+        ]]></pre>
+      </div>
+    </foreignObject>
+  </g>
+
+  <!-- LÍNEA DIVISORIA VERTICAL ESTILO LINEAR -->
+  <line x1="475" y1="45" x2="475" y2="565" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+
+  <!-- ================= RIGHT SIDE: TERMINAL CONTAINER ================= -->
+  <g transform="translate(510, 45)">
+    <!-- Ventana de Cristal Esmerilado (Glassmorphic Window) -->
+    <rect width="635" height="520" rx="12" fill="url(#ruido)" />
+    <rect width="635" height="520" rx="12" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+    
+    <!-- Ventana de Reflexión Superior -->
+    <path d="M 1 12 Q 1 1 12 1 L 623 1 Q 634 1 634 12 L 634 40 L 1 40 Z" fill="rgba(255,255,255,0.02)" />
+
+    <!-- Botones del Sistema (Mac Style) -->
+    <circle cx="25" cy="20" r="6" fill="#FF5F56" />
+    <circle cx="45" cy="20" r="6" fill="#FFBD2E" />
+    <circle cx="65" cy="20" r="6" fill="#27C93F" />
+    <text x="317" y="25" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle" font-weight="500">profile.sh — terminal</text>
+
+    <!-- Línea de división de cabecera -->
+    <line x1="0" y1="40" x2="635" y2="40" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+
+    <!-- ================= CONTENIDO TEXTUAL CON MÁSCARAS ================= -->
+    
+    <!-- LÍNEA 1: GREETING & NAME -->
+    <g mask="url(#mask-linea1)">
+      <text x="35" y="85" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="700" fill="#F8FAFC">Hi 👋 I'm <tspan fill="#22D3EE">José Eduardo</tspan></text>
+    </g>
+
+    <!-- LÍNEA 2: ANIMATED TYPING PHRASES -->
+    <g transform="translate(35, 125)">
+      <text x="0" y="0" font-family="monospace" font-size="18" font-weight="600" fill="#7C3AED" filter="url(#glow-suave)">
+        <!-- Rotación secuencial de roles -->
+        <tspan>
+          <animate attributeName="opacity" values="1;1;0;0;0" dur="9s" repeatCount="indefinite" keyTimes="0;0.3;0.33;0.97;1" />
+          UI/UX Web Designer
+        </tspan>
+        <tspan x="0" y="0">
+          <animate attributeName="opacity" values="0;0;1;1;0" dur="9s" repeatCount="indefinite" keyTimes="0;0.33;0.36;0.66;1" />
+          Full Stack Developer
+        </tspan>
+        <tspan x="0" y="0">
+          <animate attributeName="opacity" values="0;0;0;0;1" dur="9s" repeatCount="indefinite" keyTimes="0;0.66;0.69;0.97;1" />
+          Creative Technologist
+        </tspan>
+      </text>
+      <!-- Cursor de escritura parpadeante -->
+      <rect x="235" y="-16" width="8" height="20" fill="#22D3EE">
+        <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 15,0; -30,0; 0,0" dur="9s" repeatCount="indefinite" keyTimes="0;0.3;0.66;1" />
+      </rect>
+    </g>
+
+    <!-- BLOQUE 3: INFO METADATA CON APARIENCIA SECUENCIAL -->
+    <g mask="url(#mask-info)" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#94A3B8">
+      <!-- Location -->
+      <text x="35" y="175" font-weight="600" fill="#F8FAFC">📍 Location:</text>
+      <text x="140" y="175">Puebla, Mexico</text>
+
+      <!-- Current Focus -->
+      <text x="35" y="205" font-weight="600" fill="#F8FAFC">🚀 Current Focus:</text>
+      <text x="160" y="205">Premium UI Design systems &amp; Interactive Graphics</text>
+      
+      <!-- Core Stack -->
+      <text x="35" y="235" font-weight="600" fill="#F8FAFC">⚡ Workflow:</text>
+      <text x="140" y="235">Figma → React / Python Backend Architectures</text>
+    </g>
+
+    <!-- ================= SECCIÓN SKILLS DE ALTO IMPACTO ================= -->
+    <g mask="url(#mask-info)" transform="translate(35, 280)">
+      <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#F8FAFC" letter-spacing="0.5">EXPERT SKILLS</text>
+      
+      <!-- Rejilla de Pastillas Flex/Vectoriales con Micro-Glow -->
+      <g transform="translate(0, 15)">
+        <!-- Fila 1 -->
+        <g transform="translate(0,0)">
+          <rect width="90" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="45" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#22D3EE" font-weight="600" text-anchor="middle">Figma UI</text>
+        </g>
+        <g transform="translate(100,0)">
+          <rect width="80" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="40" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#F8FAFC" font-weight="600" text-anchor="middle">React</text>
+        </g>
+        <g transform="translate(190,0)">
+          <rect width="95" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="47.5" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#F8FAFC" font-weight="600" text-anchor="middle">TypeScript</text>
+        </g>
+        <g transform="translate(295,0)">
+          <rect width="75" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="37.5" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#10B981" font-weight="600" text-anchor="middle">Python</text>
+        </g>
+        
+        <!-- Fila 2 -->
+        <g transform="translate(0,40)">
+          <rect width="105" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="52.5" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#F8FAFC" font-weight="600" text-anchor="middle">Tailwind CSS</text>
+        </g>
+        <g transform="translate(115,40)">
+          <rect width="85" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="42.5" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#F8FAFC" font-weight="600" text-anchor="middle">Next.js</text>
+        </g>
+        <g transform="translate(210,40)">
+          <rect width="90" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="45" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#7C3AED" font-weight="600" text-anchor="middle">PostgreSQL</text>
+        </g>
+        <g transform="translate(310,40)">
+          <rect width="60" height="28" rx="6" fill="#1E293B" stroke="rgba(255,255,255,0.05)" />
+          <text x="30" y="18" font-family="-apple-system, sans-serif" font-size="12" fill="#F8FAFC" font-weight="600" text-anchor="middle">Git</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ================= PIE DE PÁGINA: SOCIAL GLOW ICONS ================= -->
+    <g mask="url(#mask-info)" transform="translate(35, 455)">
+      <line x1="0" y1="0" x2="565" y2="0" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+      
+      <!-- Icono GitHub -->
+      <g transform="translate(0, 20)">
+        <circle cx="16" cy="16" r="16" fill="#1E293B" stroke="rgba(255,255,255,0.08)" />
+        <path d="M16 7c-4.97 0-9 4.03-9 9 0 3.98 2.58 7.35 6.16 8.54.45.08.61-.2.61-.43v-1.51c-2.5.54-3.03-1.2-3.03-1.2-.41-1.04-.99-1.32-.99-1.32-.82-.56.06-.55.06-.55.91.06 1.39.93 1.39.93.8 1.38 2.11.98 2.62.75.08-.58.31-.98.56-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.78.93-2.41-.09-.23-.4-1.14.09-2.38 0 0 .75-.24 2.46.92.72-.2 1.48-.3 2.24-.3.76 0 1.52.1 2.24.3 1.71-1.16 2.46-.92 2.46-.92.49 1.24.18 2.15.09 2.38.58.63.93 1.43.93 2.41 0 3.46-2.1 4.22-4.11 4.44.32.28.61.82.61 1.66v2.47c0 .23.16.52.62.43A9.01 9.01 0 0025 16c0-4.97-4.03-9-9-9z" fill="#F8FAFC"/>
+      </g>
+      
+      <!-- Icono LinkedIn -->
+      <g transform="translate(48, 20)">
+        <circle cx="16" cy="16" r="16" fill="#1E293B" stroke="rgba(255,255,255,0.08)" />
+        <path d="M11.5 10h3v11h-3zm1.5-1.5c.97 0 1.75-.78 1.75-1.75S13.97 5 13 5s-1.75.78-1.75 1.75.78 1.75 1.75 1.75zm5 3c-1.87 0-2.7.97-3 1.5V10h-3v11h3v-6c0-1 .34-2 1.5-2s1.5 1 1.5 2v6h3v-6.5c0-2.5-1.2-3.5-3-3.5z" fill="#22D3EE"/>
+      </g>
+
+      <!-- Estado Activo del Sistema -->
+      <g transform="translate(440, 22)">
+        <circle cx="10" cy="10" r="5" fill="#10B981" filter="url(#glow-neon)">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <text x="24" y="14" font-family="monospace" font-size="11" fill="#10B981" font-weight="bold">SYSTEM_ONLINE</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- LÍNEA SVEEN SCANLINE (Micro-animación de Barrido Cibernético) -->
+  <line x1="0" y1="0" x2="1180" y2="0" stroke="rgba(34, 211, 238, 0.03)" stroke-width="2">
+    <animate attributeName="y1" values="0;610;0" dur="8s" repeatCount="indefinite" />
+    <animate attributeName="y2" values="0;610;0" dur="8s" repeatCount="indefinite" />
+  </line>
+</svg>
