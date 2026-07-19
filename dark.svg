@@ -19,12 +19,12 @@
       <feGaussianBlur stdDeviation="80" />
     </filter>
 
-    <!-- Gradientes Dinámicos y de Acentuación -->
+    <!-- Gradiente Animado Exclusivo para el Arte ASCII -->
     <linearGradient id="grad-ascii" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7C3AED" />
-      <stop offset="50%" stop-color="#22D3EE" />
-      <stop offset="100%" stop-color="#10B981" />
-      <animateTransform attributeName="gradientTransform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#00ffcc" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#ff0055" />
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 50 50" to="360 50 50" dur="8s" repeatCount="indefinite" />
     </linearGradient>
     
     <linearGradient id="grad-borde" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -43,7 +43,7 @@
     </mask>
     <mask id="mask-info">
       <rect x="0" y="0" width="1180" height="0" fill="#ffffff">
-        <animate attributeName="height" from="0" to="610" begin="2.2s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+        <animate attributeName="height" from="0" to="610" begin="1.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
       </rect>
     </mask>
 
@@ -73,59 +73,53 @@
   <!-- ================= BORDER SHIMMER ================= -->
   <rect x="1" y="1" width="1178" height="608" rx="15" fill="none" stroke="url(#grad-borde)" stroke-width="1.5" />
 
-  <!-- ================= LEFT SIDE: FLOATING ASCII ART ================= -->
-  <g transform="translate(0,0)">
+  <!-- ================= LEFT SIDE: FLOATING ASCII ART NATIVO ================= -->
+  <g fill="url(#grad-ascii)" font-family="monospace" font-size="6.8" font-weight="bold" letter-spacing="0">
     <!-- Animación sutil de levitación -->
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.445 0.05 0.55 0.95; 0.445 0.05 0.55 0.95" />
     
-    <!-- Tu Retrato ASCII Mezclado e Inyectado con Éxito -->
-    <foreignObject x="35" y="45" width="420" height="520">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-        <pre style="font-family:'Courier New', monospace; font-size:4.8px; line-height:1.1; font-weight:900; background:url(#grad-ascii); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin:0; padding:0; white-space:pre; filter:drop-shadow(0 0 4px rgba(34,211,238,0.15));"><![CDATA[
-&&&&&&&&ooo<o<oooo<ooo<o<o<#@@@@@@@@#@@@@####@@@@@#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&ooooooooooooooo&@@@@@@@@@@@@@@###@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&oo&&&&&&oooooo8@@@@@@@@@@@@@@###@@@@@@@8&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&oooo&o8@@@@@@@@@#########@@@@@@#o&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&ooooo8@##@@@@@@#8###8#####@@@@#ooooooo&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&ooooooooo&&&&#@#@@@@@@@@##@@#@@@@@@@@@@@###88&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&8888####@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@###888&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&888########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##8&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&#@@@@@@@@@@#@@@@@@@@@@@@@@###888888&&&&&&&&&&&&&&&&&&&&8&
-&&&&&&&&&&&&&&&&&&&&&&&8@@@@#@@@##@@####@@@@###@@8ooooo&&&&&&&&&&&&&&&&&&&&&&88&
-&&&&&&&&&&&&&&&&&&&&&&&&8@@##########88#####88#@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&88&
-&&&&&&&&&&&&&&&&&&&&&&&&&8@###8888###888888888#@@8&&&&&&&&&&&&&&&&&&&&&&&&&8888&
-&&&&&&&&&&&&&&&&&&&&&&&&&o#@##8888##888888888##8@@&&&&&&&&&&&&&&&&&&&&&&&&&8888&
-&&&&&&&&&&&&&&&&&&&&&&&&&8#@###888##888888888#88#@&&&&&&&&&&&&&&&&&&&&&&&&&888&&
-&&&&&&&&&&&&&&&&&&&&&&&&8@@@############88888#8888&&&&&&&&&&&&&&&&&&&&&&&&8888&o
-&&&&&&&&&&&&&&&&&&&&&&8#@@@@@@#########8ooooooooo&o&&&&&&&&&&&&&&&&&&&&&88888&o
-&&&&&&&&&&&8888888#8#@@@@@@#@@@@#######&ooooo::oo88o&&&&&&&&&&&&&&&&&&&&888888&o
-&&&&&&&&&&###88#######@@@@@@@#@@@######8:oooooo:o#8o&&&&&&&&&&&&&&&&&&&8888888&o
-&&&&&&&8##@@@####8#####@@@@@@@##@@@@@@@8:oooooooo#8o&&8&&&&&&&&&&&&&&&88888888&o
-&&&&&&#@@@@@@@@#888#####@@@@@@@@#######8:ooooooooooo8&###888&&&&&&&&&&88888888&o
-&&&&&#@@@@@@@@@@##8888###@@@@@@@@@#####8oooooooooo:o8&#@@@@@##88&&&8&888888888&o
-&&&&8@@@@@@@@@@@@@#####8###@@@@@@@@@@##8ooooooooooo&&&&@@@@@@@@#8&88&88888888&&o
-&&&&#@@@@@@@@@@@@@@@#####8##@@@@@@@@##@8&&888&oooo:&&&&#@@@@@@@@#8&8888888888&&o
-&&&8@@@@@@@@@@@@@@@@@@###888#@@@@@@#@@@8o&&888&&&&o&&&&8@@@@@@@@@@8888888888&&o
-&&&#@@@@@@@@@@@@@@@@@@@#######@@@@@@@##8oooo&&888&&&ooo&##@@@@@@@@@8888888888&&o
-&&8@@@@@@@@@@@@@@@@@@@@@######8#@@@@@#88&&&&&&&88888&&o&8##@@@@@@@@#888888888&&o
-&&#@@@@@@@@@@@@@@@@@@@@@@######8##@@@@@#888888&&o&&&&&&&8@##@@@@@@@@#88888888&&o
-&8@@@@@@@@@@@@@@@@@@##@@@@#########@@@@#&&88###8&&&&o&&&8@@@@@@@@@@@#88888888&&o
-&#@@@@@@@@@@@@@@@@@###@@@@@##########@@@##88#88#88&&&&&&&#@@@@@@@@@@@#8888888&&o
-8@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@####888&&&&&&&8@@@@@@@@@@@@8888888&&o
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@@@@@#888&&&&&8#@@@@@@@@@@@#888888&&o
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@#88&&&&&8#@@@@@@@@@@@#88888&&&o
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@##88&&&8@@@@@@@#@@@@@888888&&o
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8########@@@@@@@@@@@@@####@@@@@@@@@@@@@#8888&&oo
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#########@@@@@@@#@@@@@@@@@@@@@@@@@@@@@@88888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@88888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8############@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88########8###@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888########88##@@@@@@@@@@@@@@@@@@@@@@@@@@@8888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@8888888#######88#@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#888######@#88#@@@@@@@@@@@@@@@@@@@@@@@@#88888&o:
-        ]]></pre>
-      </div>
-    </foreignObject>
+    <!-- Renderizado nativo e inmune a bloqueos por coordenadas exactas -->
+    <text x="30" y="60">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;ooo&lt;o&lt;oooo&lt;ooo&lt;o&lt;o&lt;#@@@@@@@@#@@@@####@@@@@#&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="71">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;ooooooooooooooo&amp;@@@@@@@@@@@@@@###@@@@@@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="82">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;oo&amp;&amp;&amp;&amp;&amp;&amp;oooooo8@@@@@@@@@@@@@@###@@@@@@@8&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="93">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;oooo&amp;o8@@@@@@@@@#########@@@@@@#o&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="104">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;ooooo8@##@@@@@@#8###8#####@@@@#ooooooo&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="115">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;ooooooooo&amp;&amp;&amp;&amp;#@#@@@@@@@@##@@#@@@@@@@@@@@###88&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="126">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888####@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@###888&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="137">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;888########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##8&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+    <text x="30" y="148">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;#@@@@@@@@@@#@@@@@@@@@@@@@@###888888&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8&amp;</text>
+    <text x="30" y="159">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@@@@#@@@##@@####@@@@###@@8ooooo&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;88&amp;</text>
+    <text x="30" y="170">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@@##########88#####88#@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;88&amp;</text>
+    <text x="30" y="181">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@###8888###888888888#@@8&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888&amp;</text>
+    <text x="30" y="192">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;o#@##8888##888888888##8@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888&amp;</text>
+    <text x="30" y="203">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8#@###888##888888888#88#@&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;888&amp;&amp;</text>
+    <text x="30" y="214">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@@@############88888#8888&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888&amp;o</text>
+    <text x="30" y="225">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8#@@@@@@#########8ooooooooo&amp;o&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;88888&amp;o</text>
+    <text x="30" y="236">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888888#8#@@@@@@#@@@@#######&amp;ooooo::oo88o&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;888888&amp;o</text>
+    <text x="30" y="247">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;###88#######@@@@@@@#@@@######8:oooooo:o#8o&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;8888888&amp;o</text>
+    <text x="30" y="258">&amp;&amp;&amp;&amp;&amp;&amp;&amp;8##@@@####8#####@@@@@@@##@@@@@@@8:oooooooo#8o&amp;&amp;8&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;88888888&amp;o</text>
+    <text x="30" y="269">&amp;&amp;&amp;&amp;&amp;&amp;#@@@@@@@@#888#####@@@@@@@@#######8:ooooooooooo8&amp;###888&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;88888888&amp;o</text>
+    <text x="30" y="280">&amp;&amp;&amp;&amp;&amp;#@@@@@@@@@@##8888###@@@@@@@@@#####8oooooooooo:o8&amp;#@@@@@##88&amp;&amp;&amp;8&amp;888888888&amp;o</text>
+    <text x="30" y="291">&amp;&amp;&amp;&amp;8@@@@@@@@@@@@@#####8###@@@@@@@@@@##8ooooooooooo&amp;&amp;&amp;&amp;@@@@@@@@#8&amp;88&amp;88888888&amp;&amp;o</text>
+    <text x="30" y="302">&amp;&amp;&amp;&amp;#@@@@@@@@@@@@@@@#####8##@@@@@@@@##@8&amp;&amp;888&amp;oooo:&amp;&amp;&amp;&amp;#@@@@@@@@#8&amp;8888888888&amp;&amp;o</text>
+    <text x="30" y="313">&amp;&amp;&amp;8@@@@@@@@@@@@@@@@@@###888#@@@@@@#@@@8o&amp;&amp;888&amp;&amp;&amp;&amp;o&amp;&amp;&amp;&amp;8@@@@@@@@@@8888888888&amp;&amp;o</text>
+    <text x="30" y="324">&amp;&amp;&amp;#@@@@@@@@@@@@@@@@@@@#######@@@@@@@##8oooo&amp;&amp;888&amp;&amp;&amp;ooo&amp;##@@@@@@@@@8888888888&amp;&amp;o</text>
+    <text x="30" y="335">&amp;&amp;8@@@@@@@@@@@@@@@@@@@@@######8#@@@@@#88&amp;&amp;&amp;&amp;&amp;&amp;&amp;88888&amp;&amp;o&amp;8##@@@@@@@@#888888888&amp;&amp;o</text>
+    <text x="30" y="346">&amp;&amp;#@@@@@@@@@@@@@@@@@@@@@@######8##@@@@@#888888&amp;&amp;o&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@##@@@@@@@@#88888888&amp;&amp;o</text>
+    <text x="30" y="357">&amp;8@@@@@@@@@@@@@@@@@@##@@@@#########@@@@#&amp;&amp;88###8&amp;&amp;&amp;&amp;o&amp;&amp;&amp;8@@@@@@@@@@@#88888888&amp;&amp;o</text>
+    <text x="30" y="368">&amp;#@@@@@@@@@@@@@@@@@###@@@@@##########@@@##88#88#88&amp;&amp;&amp;&amp;&amp;&amp;&amp;#@@@@@@@@@@@#8888888&amp;&amp;o</text>
+    <text x="30" y="379">8@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@####888&amp;&amp;&amp;&amp;&amp;&amp;&amp;8@@@@@@@@@@@@8888888&amp;&amp;o</text>
+    <text x="30" y="390">#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#########@@@@@@@@@#888&amp;&amp;&amp;&amp;&amp;8#@@@@@@@@@@@#888888&amp;&amp;o</text>
+    <text x="30" y="401">#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@#88&amp;&amp;&amp;&amp;&amp;8#@@@@@@@@@@@#88888&amp;&amp;&amp;o</text>
+    <text x="30" y="412">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##########@@@@@@@@@##88&amp;&amp;&amp;8@@@@@@@#@@@@@888888&amp;&amp;o</text>
+    <text x="30" y="423">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8########@@@@@@@@@@@@@####@@@@@@@@@@@@@#8888&amp;&amp;oo</text>
+    <text x="30" y="434">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#########@@@@@@@#@@@@@@@@@@@@@@@@@@@@@@88888&amp;o:</text>
+    <text x="30" y="445">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@88888&amp;o:</text>
+    <text x="30" y="456">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8############@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&amp;o:</text>
+    <text x="30" y="467">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88########8###@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&amp;o:</text>
+    <text x="30" y="478">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888########88##@@@@@@@@@@@@@@@@@@@@@@@@@@@8888&amp;o:</text>
+    <text x="30" y="489">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@8888888#######88#@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&amp;o:</text>
+    <text x="30" y="500">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#888######@#88#@@@@@@@@@@@@@@@@@@@@@@@@#88888&amp;o:</text>
   </g>
 
   <!-- LÍNEA DIVISORIA VERTICAL ESTILO LINEAR -->
