@@ -1,30 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 650" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="100%" height="100%">
   <style>
     @keyframes coloresNeon {
       0% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }
       50% { color: #ff0055; text-shadow: 0 0 5px #ff0055; }
       100% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }
     }
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 30px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #c9d1d9;
+    }
+    .col-izquierda {
+      flex: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .col-derecha {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 40px;
+      border-left: 1px solid #21262d;
+    }
     .texto-ascii {
       font-family: 'Courier New', Courier, monospace;
-      font-size: 10px;
+      font-size: 8.5px;
       line-height: 1.1;
       font-weight: bold;
       margin: 0;
-      padding: 0;
       background: transparent;
       animation: coloresNeon 4s infinite;
       white-space: pre;
+    }
+    h1 {
+      color: #f0f6fc;
+      margin: 0 0 10px 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .subtitulo {
+      color: #00ffcc;
+      font-size: 18px;
+      margin: 0 0 20px 0;
+      font-weight: 400;
+    }
+    .info-p {
+      line-height: 1.6;
+      margin: 0 0 15px 0;
+      font-size: 14px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag {
+      background: #21262d;
+      color: #8b949e;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      border: 1px solid #30363d;
     }
   </style>
 
   <!-- Fondo oscuro estilo GitHub -->
   <rect width="100%" height="100%" fill="#0d1117" rx="8" />
 
-  <!-- Contenedor XHTML seguro -->
-  <foreignObject x="25" y="25" width="800" height="600">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <pre class="texto-ascii"><![CDATA[
+  <foreignObject x="0" y="0" width="1000" height="550">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="flex-container">
+      
+      <!-- COLUMNA IZQUIERDA: TU ARTE ASCII -->
+      <div class="col-izquierda">
+        <pre class="texto-ascii"><![CDATA[
 &&&&&&&&ooo<o<oooo<ooo<o<o<#@@@@@@@@#@@@@####@@@@@#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&ooooooooooooooo&@@@@@@@@@@@@@@###@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 &&&&&&&&&oo&&&&&&oooooo8@@@@@@@@@@@@@@###@@@@@@@8&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -66,7 +123,37 @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@#8888########88##@@@@@@@@@@@@@@@@@@@@@@@@@@@8888&o:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@8888888#######88#@@@@@@@@@@@@@@@@@@@@@@@@@@#8888&o:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@#88#888######@#88#@@@@@@@@@@@@@@@@@@@@@@@@#88888&o:
-      ]]></pre>
+        ]]></pre>
+      </div>
+
+      <!-- COLUMNA DERECHA: TU INFORMACIÓN (Puedes editar todo este texto) -->
+      <div class="col-dash col-derecha">
+        <h1>¡Hola! Soy jeddxxx</h1>
+        <div class="subtitulo">UI/UX Web Designer &amp; Developer</div>
+        
+        <p class="info-p">
+          Me apasiona fusionar el diseño visual creativo con código limpio y funcional. 
+          Especializado en crear experiencias digitales interactivas, interfaces modernas 
+          y soluciones personalizadas.
+        </p>
+
+        <p class="info-p"><strong>🚀 Lo que hago:</strong></p>
+        <div class="tags">
+          <span class="tag">UI/UX Design</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">Front-End</span>
+          <span class="tag">Creative Coding</span>
+        </div>
+
+        <p class="info-p" style="margin-top: 20px;"><strong>🛠️ Tech Stack:</strong></p>
+        <div class="tags">
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+
     </div>
   </foreignObject>
 </svg>
